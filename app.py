@@ -3,6 +3,7 @@ app = Flask(__name__)
 
 server_ip=''
 server_port=''
+client_ver='1'
 
 @app.route('/server/<ip>/<port>')
 def server_side(ip,port):
@@ -11,13 +12,18 @@ def server_side(ip,port):
    server_ip=ip
    server_port=port
    return 'DONE'
-
+@app.route('/client_ver/<ver>')
+def server_side(ver):
+   global client_ver
+   client_ver=ver
+   return 'DONE'
 
 @app.route('/client')
 def client_side():
    global server_ip
    global server_port
-   return  '{} {}'.format(server_ip,server_port) 
+   global client_ver
+   return  '{} {} {}'.format(server_ip,server_port,client_ver) 
 
 if __name__ == '__main__':
    app.run(debug = True)
