@@ -13,7 +13,7 @@ def server_side(ip,port):
    server_port=port
    return 'DONE'
 
-@app.route('/client_ver/<ver>')
+@app.route('/clientver/<ver>')
 def server_side(ver):
    global client_ver
    client_ver=ver
