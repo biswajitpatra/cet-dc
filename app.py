@@ -12,6 +12,7 @@ def server_side(ip,port):
    server_ip=ip
    server_port=port
    return 'DONE'
+
 @app.route('/client_ver/<ver>')
 def server_side(ver):
    global client_ver
