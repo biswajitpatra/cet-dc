@@ -1,1 +1,1 @@
-web: gunicorn app:app --log-file=-
+web: gunicorn cetdc:app --log-file=-
